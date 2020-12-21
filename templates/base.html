@@ -1,0 +1,94 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="shortcut icon" href="{% static 'landing/images/favicon.png' %}"/>
+
+  {% include "css.html" %}
+
+  <title>UNF Finance |{% block title %}{% endblock %}</title>
+
+  {% block head %}
+  {% endblock %}
+
+  <!-- Navigation -->
+ <nav class="navbar navbar-expand-lg navbar-inverse navbar-light"
+     style="font-family: 'Nova Flat', 'serif'">
+  <a class="navbar-brand" href="#">UNF</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse"
+          data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false"
+          aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="/"><i class="fas fa-home fa-lg"></i></a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="https://github.com/UnitedNationsFoundation/salesforce-financial_edge">Code
+          {% if new_posts == True %}
+            <span class="label label-default">New</span>{% endif %}</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
+           role="button" data-toggle="dropdown" aria-haspopup="true"
+           aria-expanded="false">
+          APIs
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="{% url 'sf-api:list_create' %}">List/Create</a>
+          {# <a class="dropdown-item" href="{% url 'accounts:api' %}">User Accounts</a> #}
+          {#          <a class="dropdown-item" href="#">Another action</a>#}
+        </div>
+      </li>
+      {% if request.user.is_staff %}
+        <li class="nav-item">
+          <a class="nav-link"
+             href="{% url 'admin:index' %}">{{ request.user.email }}</a>
+        </li>
+        <li class="nav-item"><a class="nav-link"
+                                href="{% url 'accounts:logout' %}"><i
+            class="fas fa-sign-out-alt fa-lg"></i></a></li>
+      {% elif request.user.is_authenticated %}
+        <li class="nav-item" style="color: white;">
+        <li class="nav-link"> {{ request.user.email }}</li>
+        <li class="nav-item"><a class="nav-link"
+                                href="{% url 'accounts:logout' %}"><i
+            class="fas fa-sign-out-alt fa-lg"></i></a></li>
+      {% else %}
+        <li class="nav-item"><a class="nav-link"
+                                href="{% url 'accounts:login' %}"><i
+            class="fas fa-sign-in-alt fa-lg"></i> Login</a></li>
+      {% endif %}
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search"
+             aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+        Search
+      </button>
+    </form>
+  </div>
+</nav>
+</head>
+<body>
+
+{% block content %}
+{% endblock %}
+{% include "js.html" %}
+<script>
+  $(document).ready(function () {
+    {% block jquery %}
+    {% endblock %}
+  });
+</script>
+</body>
+</html>

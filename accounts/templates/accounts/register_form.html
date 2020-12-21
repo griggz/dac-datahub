@@ -1,0 +1,56 @@
+{% load static %}
+{% load crispy_forms_tags %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {% include "includes/css.html" %}
+  <title>UNF DATA | Register</title>
+</head>
+
+<body>
+<div class="card rounded-0" id="register">
+  <h1 id="hook">Register</h1>
+  <hr class="soften">
+  <div class="card-body register d-flex flex-column text-center">
+    <form class="login-form" method="post">
+      {% csrf_token %}
+      {{ form|crispy }}
+      <button type="submit" class="btn btn-primary btn-lg rounded-0"><i
+          class="fas fa-pencil-alt fa-lg"></i> Sign Up
+      </button>
+    </form>
+  </div>
+  <div class="card-footer">
+    <div class="btn-group d-flex" role="group">
+      <a class="btn-block btn-secondary rounded-0" id="go-back"
+         href="/">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 6 12"
+             height="12px" width="6px">
+          <g fill-rule="evenodd" fill="#333333">
+            <polygon points="0 12 0 0 6 6 0 12"></polygon>
+          </g>
+        </svg>
+        Go Back
+      </a>
+      <a class="btn-block btn-secondary rounded-0" id="register"
+         href="{% url 'accounts:login' %}">
+        Log In
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 6 12"
+             height="12px" width="6px">
+          <g fill-rule="evenodd" fill="#333333">
+            <polygon points="0 12 0 0 6 6 0 12"></polygon>
+          </g>
+        </svg>
+      </a>
+    </div>
+  </div>
+</div>
+<br/>
+{% include "includes/js.html" %}
+</body>
+</html>

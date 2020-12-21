@@ -1,0 +1,221 @@
+.logo {
+  width: 80px;
+  height: 80px;
+}
+
+.icons {
+  margin-bottom: 1rem;
+  margin-top: 0.5rem;
+  padding: 0;
+}
+
+a:hover {
+  text-decoration: None;
+}
+
+.btn-secondary {
+  background-color: #fff;
+  border: none;
+  color: #18181e;
+  padding: 10px;
+  margin: 0;
+}
+
+.btn-secondary:hover {
+  background-color: #3a86ff;
+  border: none;
+}
+
+.btn-block + .btn-block {
+  margin-top: 0;
+}
+
+#register {
+  text-align: right;
+  -webkit-box-pack: end;
+}
+
+#go-back {
+  text-align: left;
+  -webkit-box-pack: start;
+}
+
+#go-back svg {
+  transform: rotate(180deg);
+}
+
+body {
+  background-color: #f8f9fa;
+  background-position: center center;
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  font-family: "Raleway", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  height: 100%;
+}
+
+html {
+  background-color: #f8f9fa;
+  position: relative;
+  height: 100%;
+}
+
+.card {
+  width: 30rem;
+  margin: auto;
+  position: relative;
+  background-size: contain;
+  display: flex;
+  background-color: #fff;
+  border: none;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+}
+
+#login {
+  top: 20%;
+}
+
+#register {
+  top: 10%;
+}
+
+.card-footer {
+  background-color: #f8f9fa;
+  padding: 0;
+  margin: 0;
+  border-top: None;
+}
+
+#hook {
+  width: 100%;
+  font-size: 4rem;
+  color: #18181e;
+  text-align: center;
+  font-family: "Raleway", sans-serif;
+  /*margin-bottom: 2.0rem;*/
+  margin-top: 2rem;
+}
+@media (max-width: 1060px) {
+  #hook {
+    justify-content: space-between;
+    font-size: 3.5rem;
+    min-width: 100%;
+    padding: 0;
+  }
+}
+@media only screen and (max-width: 768px) {
+  #hook {
+    padding: 0;
+    font-size: 3rem;
+    min-width: 100%;
+  }
+}
+
+.page_message {
+  margin: 0;
+  padding-top: 35px;
+  color: #FF5A09;
+  font-size: 14px;
+  text-align: center;
+  font-family: "Raleway", sans-serif;
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
+/*PAGE FOOTER STYLE*/
+.page-footer {
+  font-size: 1.4em;
+  font-weight: normal;
+  text-transform: uppercase;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.footer-options {
+  font-family: "Righteous", sans-serif;
+  text-transform: uppercase;
+  color: #18181e;
+  font-size: 35px;
+  margin: 0 0 0 0;
+}
+
+.footer-options a {
+  font-family: "Righteous", sans-serif;
+  text-transform: uppercase;
+  color: #18181e;
+  font-size: 35px;
+  margin: -50px 0 0 0;
+}
+
+.footer-options a:hover {
+  font-family: "Righteous", sans-serif;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #FF5A09;
+  font-size: 35px;
+  margin: 0 0 0 0;
+}
+
+.footer-options-extra {
+  font-family: "Righteous", sans-serif;
+  text-transform: uppercase;
+  color: #b3b3b3;
+  font-size: 15px;
+  margin: 40px 0 0 0;
+  text-align: center;
+}
+
+.footer-options-extra a {
+  font-family: "Righteous", sans-serif;
+  text-transform: uppercase;
+  color: #18181e;
+  font-size: 15px;
+  margin: 40px 0 0 0;
+}
+
+.footer-options-extra a:hover {
+  font-family: "Righteous", sans-serif;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #FF5A09;
+  font-size: 15px;
+  margin: 40px 0 0 0;
+}
+
+@media screen and (max-width: 568px) {
+  .card {
+    width: 23rem;
+    font-size: smaller;
+  }
+
+  #demo_modal {
+    font-size: 18px;
+  }
+}
+h5.reset {
+  margin-top: 0.5rem;
+  margin-bottom: 0;
+}
+
+hr.soften {
+  height: 1px;
+  background-color: #E6E6E6;
+  width: 100%;
+  margin: 0 auto;
+  background-image: linear-gradient(left, white 2%, #272c34 50%, white 98%);
+  background-image: -o-linear-gradient(left, white 2%, #272c34 50%, white 98%);
+  background-image: -moz-linear-gradient(left, white 2%, #272c34 50%, white 98%);
+  background-image: -webkit-linear-gradient(left, white 2%, #272c34 50%, white 98%);
+  background-image: -ms-linear-gradient(left, white 2%, #272c34 50%, white 98%);
+  background-image: -webkit-gradient(linear, left bottom, right bottom, color-stop(0.02, white), color-stop(0.5, gray), color-stop(0.98, white));
+}
