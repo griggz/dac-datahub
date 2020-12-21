@@ -140,7 +140,7 @@ dmypy.json
 
 include
 /local_data/
-/unfData/settings/local.py
+/dataHub/settings/local.py
 /db.sqlite3
 /frontend/package.json
 # dependencies

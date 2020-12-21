@@ -1,5 +1,5 @@
 import os
-os.environ["DJANGO_SETTINGS_MODULE"] = "unfData.settings"
+os.environ["DJANGO_SETTINGS_MODULE"] = "dataHub.settings"
 
 from django.conf import settings
 from django.core.wsgi import get_wsgi_application

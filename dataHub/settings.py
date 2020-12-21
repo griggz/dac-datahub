@@ -36,7 +36,7 @@ SECRET_KEY = os.getenv('DJANGO_SECRET_KEY')
 DEBUG = True if os.getenv('ENV') == 'LOCAL' else False
 
 ALLOWED_HOSTS = ['127.0.0.1'] if os.getenv("ENV") == 'LOCAL' else [
-    'datahub-staging.herokuapp.com', 'datahub-production.herokuapp.com', ]
+    'dac-datahub-staging.herokuapp.com', 'dac-datahub-live.herokuapp.com', ]
 
 # Application definition
 
@@ -53,6 +53,7 @@ INSTALLED_APPS = [
     'corsheaders',
     'django_celery_beat',
     'django_celery_results',
+    'crispy_forms',
     'drf_yasg',
     # My Apps
     'accounts',
