@@ -57,6 +57,7 @@ INSTALLED_APPS = [
     'drf_yasg',
     # My Apps
     'accounts',
+    'leads',
     # Other Django Apps --> some apps are required to load after My Apps
     'django.contrib.admin',
 ]

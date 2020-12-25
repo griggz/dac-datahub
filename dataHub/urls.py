@@ -23,7 +23,7 @@ schema_view = get_schema_view(
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    # API
+    # API DOCS
     re_path(r'^api/docs(?P<format>\.json|\.yaml)$', schema_view.without_ui(cache_timeout=0), name='schema-json'),
     re_path(r'^api/docs/$', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
     re_path(r'^api/redoc/$', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),
@@ -31,5 +31,8 @@ urlpatterns = [
     re_path(r'^account/', include("accounts.urls", namespace='account')),
     re_path(r'^accounts/', include("accounts.passwords.urls")),
     re_path(r'^accounts/$', RedirectView.as_view(url='/account')),
+    # APPS
+    path('api/leads/', include('leads.urls')),
+    # HOME
     path('', portal_redirect, name='portal_redirect')
 ]
