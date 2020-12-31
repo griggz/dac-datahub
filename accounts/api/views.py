@@ -81,7 +81,6 @@ class AuthPageNumberPagination(pagination.PageNumberPagination):
         return Response(context)
 
 
-# Metrics API: Primary view showing ALL data grouped by overarching State.
 class AuthAPIView(generics.ListAPIView):
     queryset = User.objects.all()
     serializer_class = AuthSerializer

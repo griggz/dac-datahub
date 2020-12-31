@@ -1,6 +1,7 @@
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
 from django.contrib.auth.models import Group
+from django.contrib.sessions.models import Session
 
 from django.contrib import admin
 from django.db import models
@@ -17,7 +18,7 @@ class UserAdmin(BaseUserAdmin):
     # list_select_related = (Token,)
     list_filter = ('is_admin', 'is_active')
     fieldsets = (
-        (None, {'fields': ('email', 'first_name', 'last_name', 'nickname', 'password', 'meta', 'slug'),}),
+        (None, {'fields': ('email', 'first_name', 'last_name', 'nickname', 'password', 'meta', 'slug', 'last_login'),}),
         ('Permissions', {'fields': ('is_admin', 'is_active')}),
     )
     readonly_fields = ['slug']
@@ -45,4 +46,10 @@ class GroupAdmin(admin.ModelAdmin):
 
 # Register the new Group ModelAdmin.
 admin.site.register(Group, GroupAdmin)
+
+class SessionAdmin(admin.ModelAdmin):
+    def _session_data(self, obj):
+        return obj.get_decoded()
+    list_display = ['session_key', '_session_data', 'expire_date']
+admin.site.register(Session, SessionAdmin)
 
