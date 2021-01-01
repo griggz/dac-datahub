@@ -7,7 +7,7 @@ class ContactUs(models.Model):
     email = models.CharField(max_length=100, blank=True, null=True)
     job_title = models.CharField(max_length=300, blank=True, null=True)
     organization = models.CharField(max_length=300, blank=True, null=True)
-    work_phone = models.IntegerField(blank=True, null=True)
+    work_phone = models.CharField(max_length=100, blank=True, null=True)
     web_site = models.CharField(max_length=1000, blank=True, null=True)
     number_of_staff = models.IntegerField(blank=True, null=True)
     industry = models.CharField(max_length=300, blank=True, null=True)
