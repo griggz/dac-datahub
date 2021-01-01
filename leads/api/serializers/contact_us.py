@@ -4,7 +4,7 @@ import json
 
 class ContactUsSerializer(serializers.ModelSerializer):
     url = serializers.HyperlinkedIdentityField(
-        view_name='leads-api:contact-record',
+        view_name='leads-api:contact_us-record',
         lookup_field='id'
     )
 
