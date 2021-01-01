@@ -81,7 +81,8 @@ LOGOUT_URL = '/account/logout/'
 LOGIN_EXEMPT_URLS = [
     '/accounts/password/',
     '/account/register/',
-    '/account/api/'
+    '/account/api/',
+    '/api/'
 ]
 
 ROOT_URLCONF = 'dataHub.urls'
